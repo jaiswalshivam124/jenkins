@@ -5,7 +5,42 @@ sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenk
 sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
 sudo yum install jenkins -y
 sudo systemctl start jenkins
+sudo yum install git -y //to install git
 
 ##
 #Open 8080 port from anywhere
 #Use http in url
+
+
+#Instaling npm on amazon linux2
+$ sudo amazon-linux-extras install epel
+$ sudo yum install npm # also installs nodejs
+
+npm --version
+
+
+killall -9 node //kil the npm process if any timeout occurs and port is in use
+
+
+
+use plugins for nodejs, docker, job dsl
+
+
+
+/var/jenkins_home/workspace/nodejs example project
+find ~ -name 'npm'
+
+#Github Integration 
+github branch source plugin
+
+#Jenkins Slave
+Typically in production -> one small master and two or more worker node
+worker node have one or more build executors
+-> two executor means only two builds can run in parallel (others will get queued up)
+
+#Static worker Scaling and Dynamic worker Scaling (Amazon EC2 plugin)
+#Slave Solutions
+master connect to slave(using SSH)
+slave connect to master(using JNLP)
+
+
